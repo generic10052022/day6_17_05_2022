@@ -201,5 +201,173 @@ public class EmployeeMain {
 
 
 -------------------------------------------------------------
-Student class with 2 student objects,
-------------------------------------------------------------------------
+Student class with 2 student objects, subjects will be same for all the 
+students. make use of constructors,setters and getters and static method/static
+members wherever required. Add a method called calculateAverage. which will
+display the average score for the 3 subjects. 
+
+
+public class Student {
+ private int roll;
+ private String name;
+ private static String subjects[];
+ private int marks[];
+
+static {
+/*   subjects=new String[3]{"English","Maths",Science"}; // Compilation error because we cannot provide the size for the array , if we are initialising it at the same time. */
+  /* subjects=new String[3];
+  subjects[0]="English";
+  subjects[1]="Maths";
+  subjects[2]="Science";
+  The above 4 lines are correct for declaring and initialising */
+  subjects[]=new String[]{"English","Maths","Science"}'
+  /* The above line is correct for declaring and initialising the String array. */
+
+  }
+
+  // setters/getters methods
+
+  void averageCalculate(){
+
+   }
+
+}
+
+import java.util.Scanner;
+
+public class StudentMain{
+   public static void main(String args[]){
+    Student students[]=new Student[2];
+    Scanner scan=new Scanner(System.in);
+   
+
+ }
+}
+
+Where we find the difference between instance variables, static variables and local variables.
+
+---------------------------------------------------------------------------------------------------------------Aggregation which is also known as Has-a relationship. 
+
+
+Department is having a Manager.
+public class Employee1{
+private String empName;
+private String empId;
+private long contactNo;
+private String address;
+public String getEmpName() {
+	return empName;
+}
+public void setEmpName(String empName) {
+	this.empName = empName;
+}
+public String getEmpId() {
+	return empId;
+}
+public void setEmpId(String empId) {
+	this.empId = empId;
+}
+public long getContactNo() {
+	return contactNo;
+}
+public void setContactNo(long contactNo) {
+	this.contactNo = contactNo;
+}
+public String getAddress() {
+	return address;
+}
+public void setAddress(String address) {
+	this.address = address;
+}
+
+//setters/getters
+
+}
+
+public class Department {
+private int deptId;
+private String deptName;
+private Employee1 manager;
+public int getDeptId() {
+	return deptId;
+}
+public void setDeptId(int deptId) {
+	this.deptId = deptId;
+}
+public String getDeptName() {
+	return deptName;
+}
+public void setDeptName(String deptName) {
+	this.deptName = deptName;
+}
+public Employee1 getManager() {
+	return manager;
+}
+public void setManager(Employee1 manager) {
+	this.manager = manager;
+}
+
+//setters/getters
+
+}
+
+public class EmployeeDepartmentMain1 {
+   public static void main(String args[]){
+    Employee1 employee=new Employee1();
+    Department dept=new Department();
+    employee.setEmpId("E0001");
+    employee.setEmpName("Gajendra");
+    employee.setContactNo(9834533441L);
+    employee.setAddress("A/122 Netaji Nagar Delhi");
+    dept.setDeptId(1);
+    dept.setDeptName("stores");
+    dept.setManager(employee);
+    System.out.println(dept.getDeptId());
+    System.out.println(dept.getDeptName());
+    System.out.println(dept.getManager()); // You wont be able to read the employeeDetails Employee1@cac736f
+    employee=dept.getManager();
+    System.out.println(employee.getEmpId());
+    System.out.println(employee.getEmpName());
+    System.out.println(employee.getContactNo());
+    System.out.println(employee.getAddress());
+   }
+}  
+----------------------------------------------------------------------------------------  
+Design a class Person with instance variables age,name and address. Name will be a class with firstName,
+middleName and lastName. Address will be a class with hno, streetName, locality, City, State.
+
+public class Name {
+  private String firstName;
+  private String middleName;
+  private String lastName;
+  
+  // setters/getters
+
+}
+
+public class Address{
+  private String hno;
+  prvate String streetName;
+  private String locality;
+  private String city;
+
+  // setters/getters
+
+}
+
+public class Person  {
+  private int age;
+  private Name name;
+  private Address address;
+
+ // setters/getters
+}
+
+public class PersonMain {
+   public static void main(String args[]) {
+
+   }
+}
+  
+---------------------------------------------------------------------------------------------------
+
