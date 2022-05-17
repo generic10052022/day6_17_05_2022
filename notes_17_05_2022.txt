@@ -334,8 +334,7 @@ public class EmployeeDepartmentMain1 {
 }  
 ----------------------------------------------------------------------------------------  
 Design a class Person with instance variables age,name and address. Name will be a class with firstName,
-middleName and lastName. Address will be a class with hno, streetName, locality, City, State.
-
+middleName and lastName. Address will be a class with hno, streetName, locality, city, State.
 public class Name {
   private String firstName;
   private String middleName;
@@ -344,22 +343,17 @@ public class Name {
   // setters/getters
 
 }
-
 public class Address{
-  private String hno;
+  private String hno; // A/22
   prvate String streetName;
   private String locality;
   private String city;
-
   // setters/getters
-
 }
-
 public class Person  {
   private int age;
   private Name name;
   private Address address;
-
  // setters/getters
 }
 
@@ -370,4 +364,36 @@ public class PersonMain {
 }
   
 ---------------------------------------------------------------------------------------------------
+A person can have 2 addresses. 
+public class Name1 {
+  private String firstName;
+  private String middleName;
+  private String lastName;
+  
+  // setters/getters
 
+}
+
+
+
+public class Person1  {
+  private int age;
+  private Name1 name;
+  private Address1 address[];
+ // setters/getters
+}
+
+public class Address1{
+  private String hno; // A/22
+  prvate String streetName;
+  private String locality;
+  private String city;
+  // setters/getters
+}
+
+
+public class PersonMain1 {
+   public static void main(String args[]) {
+
+   }
+}
