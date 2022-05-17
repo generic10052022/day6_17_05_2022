@@ -603,4 +603,75 @@ public class PatientMain {
    System.out.println(appointment2.getDate()); //11-Jun-2022
  }
 }
+------------------------------------------------------------------------------------------------------------
+We have an Item class. Item class is with id , itemname , unitprice.
+We have a customer class with customerid,customername and mobilenumber.
+the class Order will have itemList as an attribute.  
+We have a Bill class with billid and a method called generatebill which will be passed with a customer's details and Itemlist and it will return the total bill amount ( Considering that we are asking for only one
+item).
+
+public class Item {
+   private int id;
+   private String itemName;
+   private float unitPrice;
+
+   //setters/getters
+}
+
+public class Customer {
+   private String customerId;
+   private String customerName;
+   private long mobileNumber;
+ // setters/getters
+}
+
+public class Order {
+      private int orderId;
+      private Item items[];  // Order and Items are related with HAS-A relationship. Order is having items.
+    // getters/setters
+ }
+
+// Bill class is having uses relationship with Customer and Order because Customer and Order objects are not
+// attribute but they are used in the method generateBill and passed as a parameter
+public class Bill{
+private int billId;
+
+public double generateBill(Customer cust, Order order){
+ double totalPrice;
+}
+
+}
+
+import java.util.Scanner;
+public class Main {
+  public static void main(String args[]){
+  Scanner scan=new Scanner(System.in);
+  int numberOfItems;
+  System.out.println("Enter the number of items");
+  numberOfItems=scan.nextInt();
+  Item items[]=new Items[numberOfItems];
+  Customer customer=new Customer();
+  Order order=new Order();
+  double totalPrice=order.generateBill(customer,order); // The details of
+// Customer should be shown with generateBill method and the details
+// which we need to print is shown in the testcase.
+  System.out.println(totalPrice);
+ }
+}
+  TestCase
+  Enter the number of items
+  2
+  Customer Id C0001
+  Customer Name Ravi
+  OrderId   1
+  Item Details
+  I001 Pen   10
+  I002 Pencil 2
+  Total Price: 12.00
+  
+
+
+---------------------------------------------------------------------------------------------------------
+
+
 
