@@ -428,7 +428,179 @@ public class PersonMain1 {
        }
    }
  }
- 
+ ---------------------------------------------------------------------------------
      
+ public class PersonMain1b {
+   public static void main(String args[]) {
+      
+      Address1 address[]=new Address1[2];
+      Person1 person=new Person1();
+      Name1 name=new Name1();
+      String addressDetails1[][]={ {"A/122","Park Street","Central Kolkata","Kolkata"},
+                                   {"111","Jawahar Street","Hind Market","Srinagar"} };  
+                            
+      for(int i=0;i<address.length;i++)
+       {
+          address[i]=new Address1();
+          address[i].setHno(addressDetails[i][0]);
+          address[i].setStreetName(adressDetails[i][1]);
+          address[i].setLocality(addressDetails[i][2]);
+          address[i].setCity(addressDetails[i][3]);
+      }
+   
+      name.setFirstName("Raman");
+      name.setMiddleName("Kumar");
+      name.setLastName("Verma");
+      person.setAge(20);
+      person.setName(name);
+      person.setAddress(address);
+      System.out.println("The details");
+      System.out.println(person.getAge());
+      name=person.getName();
+      System.out.println(name.getFirstName());
+      System.out.println(name.getMiddleName());
+      System.out.println(name.getLastName());
+      address=person.getAddress();
+      for(Address add : address){
+        System.out.println(add.getHno());
+        System.out.println(add.getStreetName());
+        System.out.println(add.getLocality());
+        System.out.println(add.getCity());
+       }
    }
+ }
+-------------------------------------------------------------------------------------------------------
+A person can have 2 addresses. We want to work with the details of 2 Persons.
+
+   Person2 persons[]=new Person2[2];
+---------------------------------------------------------------------------------------------------------
+
+public class Author {
+   private String name;
+   private Address address;
+
 }
+
+public class Book{
+   private int id;
+   private String title;
+   private String subject;
+   private String language;
+   private Author author;
+}
+public class Address{
+  private String buildingNo;
+  private String streetName;
+  private String locality;
+  private String city;
+  private String country;
+ }
+
+
+
+public class Library {
+    private String name;
+    private String Address;
+    private Book books[];
+
+}
+
+
+public class LibraryMain{
+  public static void main(String args[]){
+
+  }
+} 
+------------------------------------------------------------------------------------------------------------
+public class Appointment{
+  private int id;
+  private String date;
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
+public String getDate() {
+	return date;
+}
+public void setDate(String date) {
+	this.date = date;
+}
+  
+  
+}
+
+public class Patient {
+  private int age;
+  private String name;
+  private String gender;
+  private Appointment appointment;
+}
+
+The above relationship is has a relationship between Patient and Appointment.
+But that is not the correct approach of Patient having has a relationship
+with the appointment
+
+It can have use a relationship
+
+public class Patient {
+  private int age;
+  private String name;
+  private String gender;
+ 
+   public Appointment makeAppointment(Appointment app){
+      Appointment appo=app;
+      appo.setDate("11-Jun-2022");
+      return appo;
+      
+   }
+
+public int getAge() {
+	return age;
+}
+
+public void setAge(int age) {
+	this.age = age;
+}
+
+public String getName() {
+	return name;
+}
+
+public void setName(String name) {
+	this.name = name;
+}
+
+public String getGender() {
+	return gender;
+}
+
+public void setGender(String gender) {
+	this.gender = gender;
+}
+   
+   
+}
+
+
+public class PatientMain {
+  public static void main(String args[]){
+   Appointment appointment=new Appointment();
+   appointment.setId(1);
+   System.out.println(appointment.getId());    // 1
+   System.out.println(appointment.getDate());  // null
+
+   Patient patient=new Patient();
+   patient.setAge(30);
+   patient.setName("Romesh");
+   patient.setGender("Male");
+   Appointment appointment2=patient.makeAppointment(appointment);
+   System.out.println("the details");
+   System.out.println(patient.getAge());
+   System.out.println(patient.getName());
+   System.out.println(appointment2.getId());  //1
+   System.out.println(appointment2.getDate()); //11-Jun-2022
+ }
+}
+
