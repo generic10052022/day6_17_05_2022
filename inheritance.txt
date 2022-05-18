@@ -1,0 +1,27 @@
+** inheritance
+
+- reusing member variables and methods from existing class while designing new class.
+- non private member variables and methods of super-class are directly accessible in sub-class
+- private member variables  are accessible through getter ans setter methods.
+- to inherit a class extends keyword is used as fllows
+	class subclassname extends superclassname{
+
+
+- generally object of sub-class is created and used to implement the design.
+- when object of sub-class is created constructor of sub-class will implicitly call default(parameterless) constructor of super class and then statements in sub-class constructor are executed.
+- parameterized constructor of super-class called be invoked with super keyword as follows
+	super(appropriate parameter list);
+	it should be the first statement in the sub-class constructor.
+- other way of initializing instance variables of super-class is using getter and setter methods in the sub-class comstructor.
+-or in super-class use protected access modifier for instance variables which can be directly accessed 	in sub-class constructor and methods.
+
+- in OOPs many types of inheritance are used like single inheritance, multilevel inheritance, hierarchical inheritance, multiple inheritance, hybrid/diamondshaped inheritance
+- JAVA supports only single inheritance, multilevel inheritance, hierarchical inheritance.
+
+
+
+
+
+
+
+ 
